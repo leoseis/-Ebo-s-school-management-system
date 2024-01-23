@@ -17,8 +17,8 @@ class Student(models.Model):
 
     
 
-    def __str__(self):
-        return 
+    #def __str__(self): 
+       # return 
 
-    def __unicode__(self):
-        return 
+    #def __unicode__(self): #
+       # return 
