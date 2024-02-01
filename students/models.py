@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Student(models.Model):
-    StudentId = models.AutoField(primary_key=True)
+    studentId = models.AutoField(primary_key=True)
     FirstName = models.CharField(max_length=100)
     LastName = models.CharField(max_length=100)
     RegistrationNo = models.CharField(max_length=100)
@@ -15,8 +15,4 @@ class Student(models.Model):
 
     
 
-    #def __str__(self): 
-       # return 
-
-    #def __unicode__(self): #
-       # return 
+   

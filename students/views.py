@@ -23,15 +23,14 @@ class StudentView(APIView):
         try:
             student = Student.objects.get(studentId=pk)
             return student
-        except Student.DoesNotExist():
-            raise Http404
-        
+        except:
+            return JsonResponse("Student Does Not Exist", safe=False)
+
     def get(self, request, pk=None):
         if pk:
-            data =self.get_student(pk)
-            serializer =StudentSerializer(data)
+            data = self.get_student(pk)
+            serializer = StudentSerializer(data)
         else:
             data = Student.objects.all()
             serializer = StudentSerializer(data, many=True)
-
         return Response(serializer.data)
