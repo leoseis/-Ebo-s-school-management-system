@@ -44,3 +44,9 @@ class StudentView(APIView):
             serializer.save()
             return JsonResponse("Student Updated Successfully", safe=False)
         return JsonResponse("Failed to Update Student")
+    
+
+    def delete ( self,request, pk=None):
+        student_to_delete =  Student.objects.get(studentId=pk)
+        student_to_delete.delete()
+        return JsonResponse('student deleted succesfully', safe=False)
