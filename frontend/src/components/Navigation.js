@@ -9,8 +9,6 @@
         CDBSidebarMenuItem,
         CDBSidebarContent,
         CDBSidebarMenu,
-        CDBSidebarSubMenu,
-        CDBSidebarFooter,
       } from 'cdbreact';
 
 
@@ -33,25 +31,17 @@
             <div>
                 
             <CDBSidebar>
-        <CDBSidebarHeader prefix={<i className="fa fa-bars" />}>Contrast</CDBSidebarHeader>
+        <CDBSidebarHeader prefix={<i className="fa fa-bars" />}>Navigation</CDBSidebarHeader>
         <CDBSidebarContent>
           <CDBSidebarMenu>
-            <CDBSidebarMenuItem icon="th-large">Dashboard</CDBSidebarMenuItem>
-            <CDBSidebarMenuItem icon="sticky-note">Components</CDBSidebarMenuItem>
-            <CDBSidebarMenuItem icon="credit-card" iconType="solid">
-              Metrics
+            <CDBSidebarMenuItem icon="home">Home</CDBSidebarMenuItem>
+            <CDBSidebarMenuItem icon="list">Students</CDBSidebarMenuItem>
+            <CDBSidebarMenuItem icon="user" iconType="solid">
+              Manage Students
             </CDBSidebarMenuItem>
           </CDBSidebarMenu>
         </CDBSidebarContent>
 
-        <CDBSidebarFooter style={{ textAlign: 'center' }}>
-          <div
-            className="sidebar-btn-wrapper"
-            style={{padding: '20px 5px'}}
-          >
-            Sidebar Footer
-          </div>
-        </CDBSidebarFooter>
       </CDBSidebar>
             </div>
             </div>
