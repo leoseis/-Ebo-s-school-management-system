@@ -30,7 +30,7 @@
             
             <div>
                 
-            <CDBSidebar>
+            <CDBSidebar textColor="333"backgroundColor="fofofo">    
         <CDBSidebarHeader prefix={<i className="fa fa-bars" />}>Navigation</CDBSidebarHeader>
         <CDBSidebarContent>
           <CDBSidebarMenu>
