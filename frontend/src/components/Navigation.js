@@ -28,8 +28,7 @@
             </Navbar.Brand>
         </Navbar>
             
-            <div>
-                
+      <div className="sidebar">
             <CDBSidebar textColor="333"backgroundColor="fofofo">    
         <CDBSidebarHeader prefix={<i className="fa fa-bars" />}>Navigation</CDBSidebarHeader>
         <CDBSidebarContent>
@@ -42,9 +41,9 @@
           </CDBSidebarMenu>
         </CDBSidebarContent>
 
-      </CDBSidebar>
-            </div>
-            </div>
+       </CDBSidebar>
+      </div>
+    </div>
         );
     };
 
