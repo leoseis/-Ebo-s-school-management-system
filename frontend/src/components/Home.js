@@ -18,14 +18,14 @@ const Home = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={slide03}
+          src={slide02}
           alt="Second slide"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={slide02}
+          src={slide03}
           alt="Third slide"
         />
       </Carousel.Item>
