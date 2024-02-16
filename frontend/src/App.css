@@ -15,3 +15,8 @@ body, html {
   float: left;
 overflow: scroll initial;
 }
+
+
+.side-row{
+  padding: 30px;
+}
