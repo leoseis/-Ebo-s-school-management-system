@@ -24,7 +24,7 @@ const Navigation = () => {
               className="d-inline-block align-center"
               alt="React Bootstrap logo"
             />{' '}
-            Student Management System
+            LEE's School Management Portal
         </Navbar.Brand>
     </Navbar>
     <div className='sidebar'>
