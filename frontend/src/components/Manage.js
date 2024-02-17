@@ -6,6 +6,7 @@ import "../App.css";
 
 const Manage = () => {
   const [students, setStudents] = useState([]);
+  const [addModalshow, setAddModalshow] = useState(false);       // This ana add function
 
   useEffect(() => {
    let mounted = true;
@@ -31,6 +32,7 @@ const Manage = () => {
             <th>Registration No</th>
             <th>Email</th>
             <th>Course</th>
+            <th>Action</th>            
             </tr>
         </thead>
         <tbody>
@@ -42,6 +44,8 @@ const Manage = () => {
                 <td>{stu.RegistrationNo}</td>
                 <td>{stu.Email}</td>
                 <td>{stu.Course}</td>
+                <td> <Button className='mr-2' variant="danger">Delete</Button>{' '}  
+                  </td>
             </tr>)}
         </tbody>
     </Table>
