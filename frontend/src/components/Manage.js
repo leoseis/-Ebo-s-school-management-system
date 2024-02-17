@@ -44,11 +44,17 @@ const Manage = () => {
                 <td>{stu.RegistrationNo}</td>
                 <td>{stu.Email}</td>
                 <td>{stu.Course}</td>
-                <td> <Button className='mr-2' variant="danger">Delete</Button>{' '}  
+                <td> 
+                  <Button className='mr-2' variant="primary">Update</Button>{' '}  
+                  <Button className='mr-2' variant="danger">Delete</Button>{' '}  
+
                   </td>
             </tr>)}
         </tbody>
     </Table>
+    <ButtonToolbar>  
+    <Button  variant="success">Add student </Button>{' '}  
+    </ButtonToolbar>
     </div>
   </div>
   );
