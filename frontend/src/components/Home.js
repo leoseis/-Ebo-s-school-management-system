@@ -1,4 +1,4 @@
-import slide01 from '../static/slide01.png'
+import slide01 from '../static/slide01.png'         //all this are the pics for the slide 01,02,03
 import slide02 from '../static/slide02.png'
 import slide03 from '../static/slide03.png'
 
