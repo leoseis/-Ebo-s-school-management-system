@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import { getStudents, deleteStudents} from '../services/StudentService';
-import "../App.css";
+import AddStudentModal from './AddStudentModal';
+
 
 const Manage = () => {
   const [students, setStudents] = useState([]);
-  const [addModalshow, setAddModalshow] = useState(false);       // This ana add function
+  const [addModalshow, setAddModalshow] = useState(false);       // This ana add function this shows a new form when there is am add button
 
   useEffect(() => {
    let mounted = true;
@@ -17,7 +18,14 @@ const Manage = () => {
        }
      })
    return () => mounted = false;
- }, [])
+ }, []);
+
+   const  handleAdd = (e) =>{                              // handleAdd handler
+    e.preventDefault();
+    setAddModalshow(true);
+   };
+
+   let AddModalClose = () => AddModalClose(false)   // whenever my form is closed set  to false
 
   return(
    <div className="container-fluid side-container">
@@ -32,7 +40,7 @@ const Manage = () => {
             <th>Registration No</th>
             <th>Email</th>
             <th>Course</th>
-            <th>Action</th>            
+            <th>Action</th>                  
             </tr>
         </thead>
         <tbody>
@@ -53,7 +61,9 @@ const Manage = () => {
         </tbody>
     </Table>
     <ButtonToolbar>  
-    <Button  variant="success">Add student </Button>{' '}  
+    <Button  variant="success"onClick={handleAdd}>Add Student </Button>{' '}
+    <AddStudentModal show={addModalshow}onHide={AddModalClose}>
+      </AddStudentModal>  
     </ButtonToolbar>
     </div>
   </div>
