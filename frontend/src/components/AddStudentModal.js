@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
 
-const AddStudentModal = () => {
+const AddStudentModal = (props) => {
   return (
     <div className="container">
-        <Modal.Dialog>
+        <Modal{...props}>
             <Modal.Header closeButton>
             <Modal.Title>Modal title</Modal.Title>
             </Modal.Header>
@@ -17,7 +17,7 @@ const AddStudentModal = () => {
             <Button variant="secondary">Close</Button>
             <Button variant="primary">Save changes</Button>
             </Modal.Footer>
-        </Modal.Dialog>
+        </Modal>
     </div>
   );
 };
