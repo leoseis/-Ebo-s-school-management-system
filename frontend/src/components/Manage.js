@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { Button, ButtonToolbar } from "react-bootstrap";
-import { getStudents, } from "../services/StudentService";
+import { getStudents, deleteStudent } from '../services/StudentService';
 import AddStudentModal from "./AddStudentModal";
 import UpdateStudentModal from "./UpdateStudentModal";
 
@@ -43,6 +43,21 @@ const Manage = () => {
   };
 
 
+  const handleDelete = (e, studentId) => {
+    if(window.confirm('Are you sure ?')){
+        e.preventDefault();
+        deleteStudent(studentId)
+        .then((result)=>{
+            alert(result);
+            setIsUpdated(true);
+        },
+        (error)=>{
+            alert("Failed to Delete Student");
+        })
+    }
+};
+    
+
   let AddModalClose = () => AddModalClose(false);         // whenever my form is closed set  to false
   let EditModelClose =()=> setEditModalshow(false);
   return (
@@ -81,10 +96,10 @@ const Manage = () => {
                   onClick={event => handleUpdate(event, stu)}>
                     Update
                   </Button>{" "}
-                  <UpdateStudentModal show={editModalShow} student={editStudent} setUpdated={setIsUpdated}
-                    onHide={EditModelClose}>
+                  <UpdateStudentModal show={editModalShow} student={editStudent} setUpdated={setIsUpdated}onHide={EditModelClose}>
                     </UpdateStudentModal>
-                  <Button className="mr-2" variant="danger">
+                  <Button className="mr-2" variant="danger"
+                   onClick={event => handleDelete(event, stu.studentId)}>      {/* this onClick event is added to Delete button */}
                     Delete
                   </Button>{" "}
                 </td>
@@ -96,10 +111,7 @@ const Manage = () => {
           <Button variant="primary" onClick={handleAdd}>        {/*handleAdd hanlder for event and it would be applied to the update*/}
             Add Student
           </Button>
-          <AddStudentModal
-            show={addModalshow}
-            setUpdated={setIsUpdated}
-            onHide={AddModalClose}
+          <AddStudentModal show={addModalshow}setUpdated={setIsUpdated} onHide={AddModalClose}
           ></AddStudentModal>
         </ButtonToolbar>
       </div>

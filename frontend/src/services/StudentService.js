@@ -27,3 +27,14 @@ export function updateStudent(stuid, student) {
   })
    .then(response => response.data)
 }
+
+export function deleteStudent(studentId) {
+  return axios.delete('http://127.0.0.1:8000/students/' + studentId + '/', {
+   method: 'DELETE',
+   headers: {
+     'Accept':'application/json',
+     'Content-Type':'application/json'
+   }
+  })
+  .then(response => response.data)
+}
