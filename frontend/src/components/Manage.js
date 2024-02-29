@@ -4,6 +4,8 @@ import { Button, ButtonToolbar } from "react-bootstrap";
 import { getStudents, deleteStudent } from '../services/StudentService';
 import AddStudentModal from "./AddStudentModal";
 import UpdateStudentModal from "./UpdateStudentModal";
+import { MdEdit } from "react-icons/md";
+import { AiFillDelete } from "react-icons/ai";
 
 const Manage = () => {
   const [students, setStudents] = useState([]);
@@ -92,16 +94,18 @@ const Manage = () => {
                 <td>{stu.Email}</td>
                 <td>{stu.Course}</td>
                 <td>
+                <Button className="mr-2" variant="danger"
+                   onClick={event => handleDelete(event, stu.studentId)}>      {/* this onClick event is added to Delete button */}
+                    <AiFillDelete />
+                  </Button>
+                  <span>&nbsp;&nbsp;&nbsp;</span> 
                   <Button className="mr-2" variant="primary"
                   onClick={event => handleUpdate(event, stu)}>
-                    Update
-                  </Button>{" "}
+                    <MdEdit />
+                  </Button>
+
                   <UpdateStudentModal show={editModalShow} student={editStudent} setUpdated={setIsUpdated}onHide={EditModelClose}>
                     </UpdateStudentModal>
-                  <Button className="mr-2" variant="danger"
-                   onClick={event => handleDelete(event, stu.studentId)}>      {/* this onClick event is added to Delete button */}
-                    Delete
-                  </Button>{" "}
                 </td>
               </tr>
             ))}
